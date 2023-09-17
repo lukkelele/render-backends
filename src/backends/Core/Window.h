@@ -16,7 +16,7 @@ public:
     virtual ~Window() = default;
 
     static std::shared_ptr<Window> Create(const char* title, uint32_t width, uint32_t height);
-    virtual void Init() = 0;
+    virtual void Init(const std::string& glslVersion = "#version 330") = 0;
     virtual void OnUpdate() = 0;
     virtual void Exit() = 0;
     virtual void Clear() = 0;

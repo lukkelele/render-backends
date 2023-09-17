@@ -87,6 +87,7 @@ project "RenderBackends"
 		"%{wks.location}/lib/stb_image",
 		"%{wks.location}/lib/GLFW/include",
 		"%{wks.location}/lib/spdlog/include",
+		"%{wks.location}/lib/stb_image",
     }
 
     links

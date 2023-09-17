@@ -1,9 +1,7 @@
-#include "RendererAPI.h"
+#include "Renderer.h"
 
 
-
-
-class VulkanRenderer : public RendererAPI
+class VulkanRenderer : public Renderer
 {
 public:
     VulkanRenderer();
