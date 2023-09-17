@@ -12,12 +12,11 @@ Windows_Window::Windows_Window(const char* title, uint32_t width, uint32_t heigh
 	m_Title = title;
 	m_Width = width;
 	m_Height = height;
-	Init();
 }
 
 Windows_Window::~Windows_Window()
 {
-	Shutdown();
+	// Exit();
 }
 
 void Windows_Window::Init()
@@ -26,6 +25,18 @@ void Windows_Window::Init()
 	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE); // Set core profile
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3); // Major version
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3); // Minor version
+
+	// RendererAPI::API renderAPI = RendererAPI::GetAPI();
+	Renderer::API renderAPI = Renderer::GetAPI();
+	if (renderAPI == Renderer::API::Vulkan)
+	{
+	}
+	else if (renderAPI == Renderer::API::OpenGL)
+	{
+	}
+	else 
+	{
+	}
 
 	m_GlfwWindow = glfwCreateWindow((int)m_Width, (int)m_Height, m_Title.c_str(), nullptr, nullptr);
 	ASSERT(m_GlfwWindow);
@@ -57,7 +68,7 @@ void Windows_Window::Init()
 	ImGui::CreateContext();
 }
 
-void Windows_Window::Shutdown()
+void Windows_Window::Exit()
 {
 	m_GraphicsContext->Destroy();
 	glfwDestroyWindow(m_GlfwWindow);
@@ -66,12 +77,11 @@ void Windows_Window::Shutdown()
 
 void Windows_Window::OnUpdate()
 {
-	glfwPollEvents();
-	glfwSwapBuffers(m_GlfwWindow);
 }
 
 void Windows_Window::Clear()
 {
+	m_Renderer->Clear();
 }
 
 void Windows_Window::BeginFrame()

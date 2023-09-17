@@ -1,16 +1,15 @@
 #include "RendererAPI.h"
-
+#include "Renderer.h"
 
 #ifdef RENDER_API_VULKAN
     #include "backends/Vulkan/VulkanRenderer.h"
-    RendererAPI::API RendererAPI::m_API = API::Vulkan;
+    Renderer::API Renderer::m_API = API::Vulkan;
 #elif defined(RENDER_API_OPENGL)
     #include "backends/OpenGL/OpenGLRenderer.h" // to be impl
-    RendererAPI::API RendererAPI::m_API = API::OpenGL;
+    Renderer::API Renderer::m_API = API::OpenGL;
 #else
-    RendererAPI::API RendererAPI::m_API = API::None;
+    Renderer::API Renderer::m_API = API::None;
 #endif
-
 
 
 std::shared_ptr<RendererAPI> RendererAPI::Create(const std::string& glslVersion)

@@ -11,8 +11,8 @@ public:
     virtual ~Windows_Window();
 
     void Init();
-    void Shutdown();
     void OnUpdate();
+    void Exit();
     void Clear();
     void BeginFrame();
     void EndFrame();

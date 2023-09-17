@@ -10,7 +10,7 @@ class Renderer;
 class RendererAPI
 {
 public:
-    enum class API
+    enum class RenderAPI
     {
         None = 0,
         Vulkan = 1,
@@ -26,8 +26,8 @@ public:
     virtual void EndFrame() = 0;
 
     static std::shared_ptr<RendererAPI> Create(const std::string& glslVersion);
-    static API GetAPI() { return m_API; }
+    // static API GetAPI() { return m_API; }
 
 private:
-    static API m_API;
+    // static API m_API;
 };

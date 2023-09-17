@@ -12,7 +12,7 @@ void OpenGLRenderer::Init(const std::string& glslVersion)
 
 void OpenGLRenderer::Clear()
 {
-    glClearColor(0.0f, 1.0f, 0.5f, 1.0f);
+    glClearColor(0.42f, 0.20f, 0.30f, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 }
 

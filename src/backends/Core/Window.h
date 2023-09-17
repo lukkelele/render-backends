@@ -18,6 +18,7 @@ public:
     static std::shared_ptr<Window> Create(const char* title, uint32_t width, uint32_t height);
     virtual void Init() = 0;
     virtual void OnUpdate() = 0;
+    virtual void Exit() = 0;
     virtual void Clear() = 0;
     virtual void BeginFrame() = 0;
     virtual void EndFrame() = 0;
