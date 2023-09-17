@@ -29,6 +29,10 @@ void OpenGLContext::Init()
 	glEnable(GL_DEPTH_TEST);
 	glEnable(GL_LINE_SMOOTH);
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+
+    ImGui::CreateContext();
+    ImGui_ImplGlfw_InitForOpenGL(m_Window->GetGLFWWindow(), true);
+    ImGui_ImplOpenGL3_Init("#version 330");
 }
 
 void OpenGLContext::Destroy()

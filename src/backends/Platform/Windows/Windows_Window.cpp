@@ -33,10 +33,8 @@ void Windows_Window::Init()
 
 	if (!GLFW_Initialized)
 	{
-		// m_GraphicsContext = std::make_shared<OpenGLContext>(this);
 		m_GraphicsContext = GraphicsContext::Create(this);
 		m_GraphicsContext->Init();
-		// }
 	}
 
 	SetVSync(true);
@@ -55,6 +53,8 @@ void Windows_Window::Init()
 	m_Renderer->Init("#version 330");
 
 	GLFW_Initialized = true;
+
+	ImGui::CreateContext();
 }
 
 void Windows_Window::Shutdown()
