@@ -3,6 +3,7 @@
 #include <imgui/imgui.h>
 #include <imgui/imgui_impl_opengl3.h>
 #include "Renderer.h"
+#include "OpenGL/OpenGL_Image.h"
 
 
 class OpenGL_Renderer : public Renderer
@@ -15,6 +16,8 @@ public:
     void Clear();
     void BeginFrame();
     void EndFrame();
-    void Draw();
+    void Draw() {} // remove
+
+    void DrawImage(Image* image);
 
 };

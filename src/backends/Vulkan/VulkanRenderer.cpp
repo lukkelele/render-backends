@@ -3,6 +3,7 @@
 
 VulkanRenderer::VulkanRenderer()
 {
+    m_Instance = this;
 }
 
 void VulkanRenderer::Init(const std::string& glslVersion)
