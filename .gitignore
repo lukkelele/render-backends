@@ -54,3 +54,7 @@ lib/GLFW/tests
 **/build*
 **/*build*
 **/*.vcxproj*
+
+*.sln
+lib/*.sln
+**/*.sln
