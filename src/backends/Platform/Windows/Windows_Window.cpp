@@ -1,4 +1,10 @@
 #include "Platform/Windows/Windows_Window.h"
+#include "Core/Renderer.h"
+#ifdef RENDER_API_VULKAN
+#include "Vulkan/VulkanContext.h
+#elif defined(RENDER_API_OPENGL)
+#include "OpenGL/OpenGLContext.h"
+#endif
 
 
 Windows_Window::Windows_Window(const char* title, uint32_t width, uint32_t height)
@@ -17,28 +23,22 @@ Windows_Window::~Windows_Window()
 void Windows_Window::Init()
 {
 	glfwInit();
-	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);         // Set core profile
-	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);   // Set major version
-	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);   // Set minor version
+	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE); // Set core profile
+	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3); // Major version
+	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3); // Minor version
 
 	m_GlfwWindow = glfwCreateWindow((int)m_Width, (int)m_Height, m_Title.c_str(), nullptr, nullptr);
-	// ASSERT(m_GlfwWindow);
+	ASSERT(m_GlfwWindow);
 	glfwMakeContextCurrent(m_GlfwWindow);
 
 	if (!GLFW_Initialized)
 	{
-		GLenum err = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
-		if (err == 0)
-		{
-			printf("[ERROR] Error starting GLAD");
-			return;
-		}
-		else
-		{
-			printf("[Luuk OPENGL] Version: %s\n", glGetString(GL_VERSION));
-			GLFW_Initialized = true;
-		}
+		// m_GraphicsContext = std::make_shared<OpenGLContext>(this);
+		m_GraphicsContext = GraphicsContext::Create(this);
+		m_GraphicsContext->Init();
+		// }
 	}
+
 	SetVSync(true);
 	glEnable(GL_BLEND);
 	glEnable(GL_DEPTH_TEST);
@@ -50,10 +50,16 @@ void Windows_Window::Init()
 	glfwSetWindowAttrib(m_GlfwWindow, GLFW_FOCUSED, GL_TRUE);
 	glfwSetInputMode(m_GlfwWindow, GLFW_STICKY_KEYS, GLFW_TRUE);
 	glfwSetInputMode(m_GlfwWindow, GLFW_CURSOR, GLFW_CURSOR_NORMAL);
+
+	m_Renderer = std::make_shared<Renderer>();
+	m_Renderer->Init("#version 330");
+
+	GLFW_Initialized = true;
 }
 
 void Windows_Window::Shutdown()
 {
+	m_GraphicsContext->Destroy();
 	glfwDestroyWindow(m_GlfwWindow);
 	glfwTerminate();
 }
@@ -66,6 +72,19 @@ void Windows_Window::OnUpdate()
 
 void Windows_Window::Clear()
 {
+}
+
+void Windows_Window::BeginFrame()
+{
+	m_Renderer->Clear();
+	m_Renderer->BeginFrame();
+}
+
+void Windows_Window::EndFrame()
+{
+	m_Renderer->EndFrame();
+	m_GraphicsContext->SwapBuffers();
+	glfwPollEvents();
 }
 
 void Windows_Window::SetVSync(bool enabled)

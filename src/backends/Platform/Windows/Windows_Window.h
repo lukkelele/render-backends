@@ -1,6 +1,8 @@
 #pragma once
 #include "Window.h"
 
+// Forward Declaration
+class Renderer;
 
 class Windows_Window : public Window
 {
@@ -12,6 +14,8 @@ public:
     void Shutdown();
     void OnUpdate();
     void Clear();
+    void BeginFrame();
+    void EndFrame();
     bool IsVSync() const;
     void SetVSync(bool enabled);
 };

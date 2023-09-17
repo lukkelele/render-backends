@@ -5,8 +5,9 @@
 #include <imgui/imgui.h>
 #include <imgui/backends/imgui_impl_glfw.h>
 #include <imgui/backends/imgui_impl_opengl3.h>
-// #include <imgui/backends/imgui_impl_opengl3_loader.h>
 
+#include "Renderer.h"
+#include "GraphicsContext.h"
 
 
 class Window
@@ -18,23 +19,25 @@ public:
     virtual void Init() = 0;
     virtual void OnUpdate() = 0;
     virtual void Clear() = 0;
-    virtual bool IsVSync() const = 0;
+    virtual void BeginFrame() = 0;
+    virtual void EndFrame() = 0;
     virtual void SetVSync(bool enabled) = 0;
 
     uint32_t GetWidth()  const { return m_Width; }
     uint32_t GetHeight() const { return m_Height; }
     std::string GetTitle()  const { return m_Title; }
     GLFWwindow* GetGLFWWindow() const { return m_GlfwWindow; }
+    bool IsVSync() const { return m_VSync; }
 
-    void BeginFrame();
-    void EndFrame();
 
 protected:
     uint32_t m_Width;
     uint32_t m_Height;
     std::string m_Title;
-    GLFWwindow* m_GlfwWindow = nullptr;
     bool m_VSync;
+    GLFWwindow* m_GlfwWindow = nullptr;
+    std::shared_ptr<Renderer> m_Renderer;
+    std::shared_ptr<GraphicsContext> m_GraphicsContext = nullptr;
 
     static bool GLFW_Initialized;
 };

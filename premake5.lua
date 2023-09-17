@@ -44,11 +44,13 @@ project "RenderBackends"
 
     defines
     {
+        -- "RENDER_API_VULKAN",
+        "RENDER_API_OPENGL",
 		"_GLM_WIN32",
 		"_CRT_SECURE_NO_WARNINGS",
 		"GLFW_INCLUDE_NONE",
         "IMGUI_IMPL_OPENGL_LOADER_GLAD",
-        "IMGUI_DEFINE_MATH_OPERATORS"
+        "IMGUI_DEFINE_MATH_OPERATORS",
     }
 
     files
@@ -73,6 +75,8 @@ project "RenderBackends"
 		"%{wks.location}/src/backends",
 		"%{wks.location}/src/backends/Platform",
 		"%{wks.location}/src/backends/Core",
+		"%{wks.location}/src/backends/Vulkan",
+		"%{wks.location}/src/backends/OpenGL",
 		"%{wks.location}/lib",
 		"%{wks.location}/lib/glm",
 		"%{wks.location}/lib/imgui",
