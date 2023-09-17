@@ -22,7 +22,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{E229D851-0897-3FB4-B268-87463FB2E4B0}</ProjectGuid>
+    <ProjectGuid>{EC6552B1-DCD2-3189-84BE-1877A2798577}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <WindowsTargetPlatformVersion>10.0.19041.0</WindowsTargetPlatformVersion>
     <Platform>x64</Platform>
@@ -212,7 +212,7 @@
       <UseUtf8Encoding>Always</UseUtf8Encoding>
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule C:/Users/lukas/source/repos/render-backends/lib/glfw/src/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/lukas/source/repos/render-backends -BC:/Users/lukas/source/repos/render-backends --check-stamp-file C:/Users/lukas/source/repos/render-backends/lib/glfw/src/CMakeFiles/generate.stamp
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/lukas/source/repos/render-backends/lib/glfw -BC:/Users/lukas/source/repos/render-backends/lib/glfw --check-stamp-file C:/Users/lukas/source/repos/render-backends/lib/glfw/src/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -225,7 +225,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
       <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule C:/Users/lukas/source/repos/render-backends/lib/glfw/src/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/lukas/source/repos/render-backends -BC:/Users/lukas/source/repos/render-backends --check-stamp-file C:/Users/lukas/source/repos/render-backends/lib/glfw/src/CMakeFiles/generate.stamp
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/lukas/source/repos/render-backends/lib/glfw -BC:/Users/lukas/source/repos/render-backends/lib/glfw --check-stamp-file C:/Users/lukas/source/repos/render-backends/lib/glfw/src/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -238,7 +238,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
       <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule C:/Users/lukas/source/repos/render-backends/lib/glfw/src/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/lukas/source/repos/render-backends -BC:/Users/lukas/source/repos/render-backends --check-stamp-file C:/Users/lukas/source/repos/render-backends/lib/glfw/src/CMakeFiles/generate.stamp
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/lukas/source/repos/render-backends/lib/glfw -BC:/Users/lukas/source/repos/render-backends/lib/glfw --check-stamp-file C:/Users/lukas/source/repos/render-backends/lib/glfw/src/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -251,7 +251,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
       <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule C:/Users/lukas/source/repos/render-backends/lib/glfw/src/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/lukas/source/repos/render-backends -BC:/Users/lukas/source/repos/render-backends --check-stamp-file C:/Users/lukas/source/repos/render-backends/lib/glfw/src/CMakeFiles/generate.stamp
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/lukas/source/repos/render-backends/lib/glfw -BC:/Users/lukas/source/repos/render-backends/lib/glfw --check-stamp-file C:/Users/lukas/source/repos/render-backends/lib/glfw/src/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -292,8 +292,8 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClInclude Include="C:\Users\lukas\source\repos\render-backends\lib\glfw\src\osmesa_context.h" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="C:\Users\lukas\source\repos\render-backends\ZERO_CHECK.vcxproj">
-      <Project>{9C759C50-533B-3BA0-B5D7-0E01E71B70BF}</Project>
+    <ProjectReference Include="C:\Users\lukas\source\repos\render-backends\lib\glfw\ZERO_CHECK.vcxproj">
+      <Project>{1F9D60F0-3FA2-3B5B-A2ED-0BB15E1A2B1F}</Project>
       <Name>ZERO_CHECK</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>

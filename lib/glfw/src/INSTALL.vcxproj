@@ -22,7 +22,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{EEDF5E20-254F-3643-B181-D71D404BD93E}</ProjectGuid>
+    <ProjectGuid>{02A3C8FB-9168-3E53-B4F0-5B1882AE9D1A}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <WindowsTargetPlatformVersion>10.0.19041.0</WindowsTargetPlatformVersion>
     <Platform>x64</Platform>
@@ -125,7 +125,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <CustomBuild Include="C:\Users\lukas\source\repos\render-backends\CMakeFiles\4a2d375a0ac8839d4655ca471ede94eb\INSTALL_force.rule">
+    <CustomBuild Include="C:\Users\lukas\source\repos\render-backends\lib\glfw\CMakeFiles\4a2d375a0ac8839d4655ca471ede94eb\INSTALL_force.rule">
       <BuildInParallel Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</BuildInParallel>
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> </Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
@@ -189,14 +189,14 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="C:\Users\lukas\source\repos\render-backends\ZERO_CHECK.vcxproj">
-      <Project>{9C759C50-533B-3BA0-B5D7-0E01E71B70BF}</Project>
+    <ProjectReference Include="C:\Users\lukas\source\repos\render-backends\lib\glfw\ZERO_CHECK.vcxproj">
+      <Project>{1F9D60F0-3FA2-3B5B-A2ED-0BB15E1A2B1F}</Project>
       <Name>ZERO_CHECK</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </ProjectReference>
-    <ProjectReference Include="C:\Users\lukas\source\repos\render-backends\ALL_BUILD.vcxproj">
-      <Project>{86A912A3-5A89-321D-8FCB-3B8A00C5DA7B}</Project>
+    <ProjectReference Include="C:\Users\lukas\source\repos\render-backends\lib\glfw\ALL_BUILD.vcxproj">
+      <Project>{795B4F23-3BF3-3ED4-BBCB-353951CE2EB4}</Project>
       <Name>ALL_BUILD</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>

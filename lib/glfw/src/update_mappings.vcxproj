@@ -22,7 +22,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{B75774BB-AFC7-39EF-BEA7-2DBF6CD7D207}</ProjectGuid>
+    <ProjectGuid>{A4EF980C-9E27-3312-98FC-B13D54DE5E36}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <WindowsTargetPlatformVersion>10.0.19041.0</WindowsTargetPlatformVersion>
     <Platform>x64</Platform>
@@ -105,7 +105,7 @@
     </Midl>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <CustomBuild Include="C:\Users\lukas\source\repos\render-backends\CMakeFiles\4a2d375a0ac8839d4655ca471ede94eb\update_mappings.rule">
+    <CustomBuild Include="C:\Users\lukas\source\repos\render-backends\lib\glfw\CMakeFiles\4a2d375a0ac8839d4655ca471ede94eb\update_mappings.rule">
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Updating gamepad mappings from upstream repository</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
 cd C:\Users\lukas\source\repos\render-backends\lib\glfw\src
@@ -185,7 +185,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <UseUtf8Encoding>Always</UseUtf8Encoding>
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule C:/Users/lukas/source/repos/render-backends/lib/glfw/src/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/lukas/source/repos/render-backends -BC:/Users/lukas/source/repos/render-backends --check-stamp-file C:/Users/lukas/source/repos/render-backends/lib/glfw/src/CMakeFiles/generate.stamp
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/lukas/source/repos/render-backends/lib/glfw -BC:/Users/lukas/source/repos/render-backends/lib/glfw --check-stamp-file C:/Users/lukas/source/repos/render-backends/lib/glfw/src/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -198,7 +198,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
       <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule C:/Users/lukas/source/repos/render-backends/lib/glfw/src/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/lukas/source/repos/render-backends -BC:/Users/lukas/source/repos/render-backends --check-stamp-file C:/Users/lukas/source/repos/render-backends/lib/glfw/src/CMakeFiles/generate.stamp
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/lukas/source/repos/render-backends/lib/glfw -BC:/Users/lukas/source/repos/render-backends/lib/glfw --check-stamp-file C:/Users/lukas/source/repos/render-backends/lib/glfw/src/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -211,7 +211,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
       <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule C:/Users/lukas/source/repos/render-backends/lib/glfw/src/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/lukas/source/repos/render-backends -BC:/Users/lukas/source/repos/render-backends --check-stamp-file C:/Users/lukas/source/repos/render-backends/lib/glfw/src/CMakeFiles/generate.stamp
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/lukas/source/repos/render-backends/lib/glfw -BC:/Users/lukas/source/repos/render-backends/lib/glfw --check-stamp-file C:/Users/lukas/source/repos/render-backends/lib/glfw/src/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -224,7 +224,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
       <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule C:/Users/lukas/source/repos/render-backends/lib/glfw/src/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/lukas/source/repos/render-backends -BC:/Users/lukas/source/repos/render-backends --check-stamp-file C:/Users/lukas/source/repos/render-backends/lib/glfw/src/CMakeFiles/generate.stamp
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/lukas/source/repos/render-backends/lib/glfw -BC:/Users/lukas/source/repos/render-backends/lib/glfw --check-stamp-file C:/Users/lukas/source/repos/render-backends/lib/glfw/src/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -246,8 +246,8 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="C:\Users\lukas\source\repos\render-backends\ZERO_CHECK.vcxproj">
-      <Project>{9C759C50-533B-3BA0-B5D7-0E01E71B70BF}</Project>
+    <ProjectReference Include="C:\Users\lukas\source\repos\render-backends\lib\glfw\ZERO_CHECK.vcxproj">
+      <Project>{1F9D60F0-3FA2-3B5B-A2ED-0BB15E1A2B1F}</Project>
       <Name>ZERO_CHECK</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>

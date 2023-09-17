@@ -1,7 +1,12 @@
 #pragma once
+#include "backends/Core/Base.h"
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
-#include "Core.h"
+#include <imgui/imgui.h>
+#include <imgui/backends/imgui_impl_glfw.h>
+#include <imgui/backends/imgui_impl_opengl3.h>
+// #include <imgui/backends/imgui_impl_opengl3_loader.h>
+
 
 
 class Window
@@ -9,7 +14,7 @@ class Window
 public:
     virtual ~Window() = default;
 
-    static Window* Create(const char* title, uint32_t width, uint32_t height);
+    static std::shared_ptr<Window> Create(const char* title, uint32_t width, uint32_t height);
     virtual void Init() = 0;
     virtual void OnUpdate() = 0;
     virtual void Clear() = 0;

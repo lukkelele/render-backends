@@ -1,23 +1,18 @@
 #include "Window.h"
 
-// TODO: FIX THIS
-// #ifdef PLATFORM_WINDOWS
 #include "Platform/Windows/Windows_Window.h"
-// #elif defined(PLATFORM_LINUX)
-// #include "Platform/Linux/Linux_Window.h"
-// #endif
 
 bool Window::GLFW_Initialized = false;
 
-Window* Window::Create(const char* title, uint32_t width, uint32_t height)
+std::shared_ptr<Window> Window::Create(const char* title, uint32_t width, uint32_t height)
 {
-// TODO: FIX THIS
-// #ifdef PLATFORM_WINDOWS
-	Windows_Window* window = new Windows_Window(title, width, height);
+#ifdef PLATFORM_WINDOWS
+	// Windows_Window* window = new Windows_Window(title, width, height);
+	std::shared_ptr<Window> window = std::make_shared<Windows_Window>(title, width, height);
 	return window;
-// #endif
-#ifdef PLATFORM_LINUX
-	Window_Linux* window = new Window_Linux(title, width, height);
+#else PLATFORM_LINUX
+	// Window_Linux* window = new Window_Linux(title, width, height);
+	std::shared_ptr<Window> window = std::make_shared<Linux_Window>(title, width, height);
 	return window;
 #endif
 }
