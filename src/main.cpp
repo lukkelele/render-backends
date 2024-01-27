@@ -16,7 +16,6 @@ int main()
     OpenGL_Image* img2 = new OpenGL_Image("assets/img/atte_square.png");
     Image* img2_conv = static_cast<Image*>(img2);
 
-
     while (!glfwWindowShouldClose(glfwWindow))
     {
         window->BeginFrame();
@@ -30,7 +29,6 @@ int main()
         ImGui::PushFont(font);
         ImGui::Text("Testing large sized font here");
         ImGui::PopFont();
-        // font->FontSize = originalFontSize;
         font->Scale = 0.5;
         ImGui::PushFont(font);
         ImGui::Text("small sized font here");
