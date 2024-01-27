@@ -28,9 +28,9 @@ workspace "RenderBackends"
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}"
 
-include "lib/GLFW/glfw.lua"
-include "lib/glad/glad.lua"
-include "lib/imgui/imgui.lua"
+include "external/GLFW/glfw.lua"
+include "external/glad/glad.lua"
+include "external/imgui/imgui.lua"
 
 project "RenderBackends"
     location "src"
@@ -44,8 +44,8 @@ project "RenderBackends"
 
     defines
     {
-        -- "RENDER_API_VULKAN",
         "RENDER_API_OPENGL",
+
 		"_GLM_WIN32",
 		"_CRT_SECURE_NO_WARNINGS",
 		"GLFW_INCLUDE_NONE",
@@ -57,13 +57,14 @@ project "RenderBackends"
     { 
         "%{wks.location}/src/**.h",
         "%{wks.location}/src/**.cpp",
-        "%{wks.location}/lib/stb_image/**.h",
-        "%{wks.location}/lib/stb_image/**.cpp",
+
+        "%{wks.location}/external/stb_image/**.h",
+        "%{wks.location}/external/stb_image/**.cpp",
    	}
 
     libdirs
     {
-        "%{wks.location}/lib/GLFW/lib",
+        "%{wks.location}/external/GLFW/lib",
     }
 
     includedirs
@@ -77,17 +78,19 @@ project "RenderBackends"
 		"%{wks.location}/src/backends/Core",
 		"%{wks.location}/src/backends/Vulkan",
 		"%{wks.location}/src/backends/OpenGL",
-		"%{wks.location}/lib",
-		"%{wks.location}/lib/glm",
-		"%{wks.location}/lib/imgui",
-		"%{wks.location}/lib/imgui/backends",
-		"%{wks.location}/lib/imgui/examples",
-		"%{wks.location}/lib/glad",
-		"%{wks.location}/lib/glad/include",
-		"%{wks.location}/lib/stb_image",
-		"%{wks.location}/lib/GLFW/include",
-		"%{wks.location}/lib/spdlog/include",
-		"%{wks.location}/lib/stb_image",
+		"%{wks.location}/external",
+		"%{wks.location}/external/glm",
+		"%{wks.location}/external/imgui",
+		"%{wks.location}/external/imgui/backends",
+		"%{wks.location}/external/imgui/examples",
+		"%{wks.location}/external/glad",
+		"%{wks.location}/external/glad/include",
+		"%{wks.location}/external/stb_image",
+		"%{wks.location}/external/GLFW/include",
+		"%{wks.location}/external/spdlog/include",
+		"%{wks.location}/external/stb_image",
+
+		"%{wks.location}/external/assimp/include",
     }
 
     links
