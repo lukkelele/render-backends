@@ -58,3 +58,4 @@ lib/GLFW/tests
 *.sln
 lib/*.sln
 **/*.sln
+
